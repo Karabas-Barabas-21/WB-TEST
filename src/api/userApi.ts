@@ -1,7 +1,7 @@
 import { api } from './api';
 import { IUser } from '../types/userTypes';
 
-// Добавляем типы для ответа с пагинацией
+
 interface ApiResponse<T> {
   data: T;
   total?: number;
@@ -9,7 +9,7 @@ interface ApiResponse<T> {
 
 export const fetchUsers = async (page = 1, limit = 10) => {
   try {
-    const response = await api.get('/Users', { // Используем относительный путь
+    const response = await api.get('/Users', { 
       params: { page, limit }
     });
     return {
